@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/rails/coffee-rails.git
-  revision: 29604a59a5d7ea314f54bb52302d68ef134806bf
-  specs:
-    coffee-rails (4.1.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
-
-GIT
   remote: git://github.com/rails/sprockets-rails.git
   revision: 9ef1ac55b5c22a77bec2552f175bd02f574084a0
   specs:
@@ -76,6 +68,9 @@ GEM
     arel (7.0.0)
     builder (3.2.2)
     byebug (8.2.1)
+    coffee-rails (4.1.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.1.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -84,6 +79,9 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    foundation-rails (6.1.2.0)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -169,7 +167,8 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  coffee-rails!
+  coffee-rails (~> 4.1, >= 4.1.1)
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
   puma

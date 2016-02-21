@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Action Cable Examples</title>
-  <%= action_cable_meta_tag %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
-  <%= csrf_meta_tags %>
-  <meta name="current-user" id="<%= @current_user.try(:id) %>">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<%= action_cable_meta_tag %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="current-user" id="<%= @current_user.try(:id) %>">
+  </head>
 
-</body>
+  <body>
+
+    <div class="row">
+      <div class="small-3 column">
+        <h3>Chat avec ActionCable</h3>
+      </div>
+      <div class="small-9 column">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
+
 </html>

@@ -1,7 +1,12 @@
-<h1>Authenticate as one of the following users</h1>
+<h1>Login</h1>
 
 <ul>
   <% @users.each do |user| %>
     <li><%= link_to user.name, session_url(user_id: user.id), method: :post %></li>
   <% end %>
+  <%= form_for @user ,:url => session_path, remote: true do |form| %>
+  Nouvel utilisaeur<br/>
+  <%= form.text_field :name %><br>
+  <%= form.submit 'se logger', class: "button" %>
+<% end %>
 </ul>

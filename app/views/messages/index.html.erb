@@ -1,7 +1,13 @@
-<h1>Messages</h1>
+<h1>Salles</h1>
 
 <ul>
   <% @messages.each do |message| %>
     <li><%= link_to message.title, message %></li>
   <% end %>
 </ul>
+  <%= form_for @message ,:url => messages_path, remote: true do |form| %>
+  Nouvelle salle<br/>
+  <%= form.text_field :title %><br>
+  <%= form.text_field :content %><br>
+  <%= form.submit 'Créer une salle', class: "button" %>
+<% end %>
