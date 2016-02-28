@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
     unauthenticate_user
     redirect_to new_session_url
   end
+  
   def user_params
     params.require(:user).permit(:name)
   end
